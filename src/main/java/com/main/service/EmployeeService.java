@@ -13,8 +13,9 @@ public class EmployeeService {
     @Autowired
     private EmployeeRepository employeeRepository;
 
-    public void createOrUpdateEmployee(Employee emp) {
-        employeeRepository.save(emp);
+    public Employee createOrUpdateEmployee(Employee emp) {
+        Employee empsave = employeeRepository.save(emp);
+        return empsave;
     }
 
     public List<Employee> getAllEmployee() {
