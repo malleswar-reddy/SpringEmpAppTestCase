@@ -28,11 +28,16 @@ public class EmployeeServiceTest {
 
     @Test
     public void getAllEmployeesTest() {
-
         Mockito.when(employeeRepository.findAll()).thenReturn(EmployeeUtils.getAllEmployee());
         List<Employee> allEmployee = employeeService.getAllEmployee();
         Assertions.assertEquals(allEmployee,EmployeeUtils.getAllEmployee());
+    }
 
+    @Test
+    public void createOrUpdateEmployeeTest() {
+        Mockito.when(employeeRepository.save(EmployeeUtils.getEmployee())).thenReturn(EmployeeUtils.getEmployee());
+        Employee empUpdate = employeeService.createOrUpdateEmployee(EmployeeUtils.getEmployee());
+        Assertions.assertEquals(empUpdate,EmployeeUtils.getEmployee());
     }
 
 }

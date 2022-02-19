@@ -17,4 +17,9 @@ public class EmployeeUtils {
 
         return Arrays.asList(e1,e2,e3,e4,e5,e6);
     }
+
+    public static Employee getEmployee() {
+        Employee e1 = new Employee(1, "Davolio", "Nancy", 3500, "Marketing");
+        return e1;
+    }
 }
