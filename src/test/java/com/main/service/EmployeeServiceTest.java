@@ -12,6 +12,7 @@ import org.mockito.Mockito;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * @Mock &ndash; creates mocks
@@ -39,5 +40,19 @@ public class EmployeeServiceTest {
         Employee empUpdate = employeeService.createOrUpdateEmployee(EmployeeUtils.getEmployee());
         Assertions.assertEquals(empUpdate,EmployeeUtils.getEmployee());
     }
+
+   /* @Test
+    public void deleteEmployeeTest() {
+        Mockito.verify(employeeRepository.deleteById(Mockito.any()));
+        employeeService.deleteEmployee(EmployeeUtils.getEmployee().getId());
+    }*/
+
+
+    @Test
+    public void GetOneEmployeeTest() {
+        Mockito.when(employeeRepository.findOne(Mockito.any())).thenReturn(Optional.of(EmployeeUtils.getEmployee()));
+        employeeService.getOneEmployee(EmployeeUtils.getEmployee().getId());
+    }
+
 
 }

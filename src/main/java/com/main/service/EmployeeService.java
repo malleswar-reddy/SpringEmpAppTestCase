@@ -27,7 +27,7 @@ public class EmployeeService {
         employeeRepository.deleteById(id);
     }
 
-    public Employee editEmployee(int id) {
+    public Employee getOneEmployee(int id) {
         Employee emp = employeeRepository.getOne(id);
         return emp;
     }
