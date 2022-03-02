@@ -1,11 +1,13 @@
 package com.main.service;
 
+import com.main.exception.RecordNotFoundException;
 import com.main.model.Employee;
 import com.main.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class EmployeeService {
@@ -27,9 +29,13 @@ public class EmployeeService {
         employeeRepository.deleteById(id);
     }
 
-    public Employee editEmployee(int id) {
-        Employee emp = employeeRepository.getOne(id);
-        return emp;
+    public Employee getEmployeeById(int id) throws RecordNotFoundException {
+        Optional<Employee> emp = employeeRepository.findById(id);
+        if(emp.isPresent()) {
+            return emp.get();
+        } else {
+            throw new RecordNotFoundException("No employee record exist for given id");
+        }
     }
 
 }
