@@ -1,4 +1,4 @@
-package com.main.repository;
+package com.main.mysql.repository;
 
 import com.main.model.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
+public interface EmployeeMysqlRepository extends JpaRepository<Employee, Integer> {
 
     public Employee getOne(Integer id);
 
@@ -20,4 +20,5 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
     public Integer findNativeSumSalary();
 
 
+    Boolean existsBySalary(int id);
 }

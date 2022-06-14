@@ -13,3 +13,6 @@ INSERT INTO Employee_data VALUES ( 3 , 'Leverling','Janet',2500,'Sales');
 INSERT INTO Employee_data VALUES ( 4 , 'Peacock','Margaret',5500,'Marketing');
 INSERT INTO Employee_data VALUES ( 5 , 'Buchanan','Steven',7500,'Admin');
 INSERT INTO Employee_data VALUES ( 6 , 'Suyama','Michael',6000,'Maintenance');
+
+
+
